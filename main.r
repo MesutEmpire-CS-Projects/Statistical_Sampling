@@ -77,3 +77,12 @@ systematic_sample <- movie_data[seq(from = start, to = k*n, by = k), ]
 systematic_sample
 
 
+# Cluster sampling
+clusters <- cut(movie_data$RELEASE_YEAR, breaks = c(0, 1982, 2000, 2022) )# Define the clusters
+clusters
+cluster_no <- 1 
+clusters_selected <- sample(unique(clusters), cluster_no, replace = FALSE)
+clusters_selected
+cluster_sample <- movie_data[clusters %in% clusters_selected, ]
+cluster_sample
+
