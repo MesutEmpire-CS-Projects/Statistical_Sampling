@@ -68,3 +68,12 @@ stratified_sample
 
 
 
+# Systematic sampling
+n <- 9 # sample size
+N <- nrow(movie_data) # Population size
+k <-  nrow(movie_data) %/% n # Determine the sampling interval
+start <- sample(1:k, 1) # Determine the starting point
+systematic_sample <- movie_data[seq(from = start, to = k*n, by = k), ]
+systematic_sample
+
+
